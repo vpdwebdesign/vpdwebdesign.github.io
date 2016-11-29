@@ -8,3 +8,5 @@ out
 gen
 .gitignore
 .sass-cache
+templates
+tmp
