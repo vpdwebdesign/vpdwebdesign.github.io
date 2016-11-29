@@ -1,5 +1,4 @@
 @import url(../css/font-awesome.min.css);
-/*noinspection CssUnknownTarget*/
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
 /*
 	Forty by HTML5 UP
@@ -1710,6 +1709,41 @@ a.icon.alt:active:before {
       .image.main {
         margin: 1.5em 0; } }
 
+.image-rounded {
+  display: inline-block;
+  position: relative; }
+  .image-rounded img {
+    display: block;
+    border: 2px solid #37a6cb;
+    border-radius: 50%; }
+  .image-rounded.left, .image-rounded.right {
+    max-width: 30%; }
+    .image-rounded.left img, .image-rounded.right img {
+      width: 100%; }
+  .image-rounded.left {
+    float: left;
+    margin: 0 1.5em 1.25em 0;
+    top: 0.25em; }
+  .image-rounded.right {
+    float: right;
+    margin: 0 0 1.25em 1.5em;
+    top: 0.25em; }
+  .image-rounded.fit {
+    display: block;
+    margin: 0 0 2em 0;
+    width: 100%; }
+    .image-rounded.fit img {
+      width: 100%; }
+  .image-rounded.main {
+    display: block;
+    margin: 2.5em 0;
+    width: 100%; }
+    .image-rounded.main img {
+      width: 100%; }
+    @media screen and (max-width: 736px) {
+      .image-rounded.main {
+        margin: 1.5em 0; } }
+
 /* List */
 ol {
   list-style: decimal;
@@ -1736,8 +1770,7 @@ ul {
   ul.icons {
     cursor: default;
     list-style: none;
-    padding-left: 0;
-  }
+    padding-left: 0; }
     ul.icons li {
       display: inline-block;
       padding: 0 1em 0 0; }
