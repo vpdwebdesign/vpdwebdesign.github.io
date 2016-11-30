@@ -8,5 +8,5 @@ out
 gen
 .gitignore
 .sass-cache
-templates
-tmp
+/templates
+/render_template.py
