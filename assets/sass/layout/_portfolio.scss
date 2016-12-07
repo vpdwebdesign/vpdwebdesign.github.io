@@ -1,0 +1,228 @@
+// Variables
+$full-width: 100%;
+
+$container-padding: 0.5%;
+
+$box-width: 32%;
+
+// Box height calculation
+$current-height-scale: 100;
+$max-box-height: 250px;
+$box-height: ($current-height-scale / 100) * $max-box-height;
+
+$box-margin-horiz: 0.5%;
+$box-margin-vert: 0.5%;
+$box-padding: 0;
+
+$image-width: $full-width;
+$image-height: $full-width;
+
+// filter nav
+ul {
+  &#filters {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    vertical-align: middle;
+  }
+  > li {
+    &.filter {
+      display: inline-block;
+      font-size: 0.7em;
+      font-weight: _font(weight-bold);
+      letter-spacing: _font(letter-spacing-alt);
+      text-transform: uppercase;
+      margin: 2px 0;
+      padding: .75em;
+      text-align: center;
+    }
+    &.filter.active {
+      color: #9bf1ff;
+      border-bottom: .5px solid _palette(fg-bold);
+    }
+    &.filter:hover {
+      color: #9bf1ff;
+      cursor: pointer;
+    }
+  }
+}
+
+@include breakpoint(xsmall) {
+  ul {
+    &#filters {
+      width: 80%;
+      > li {
+        &.filter {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// Filter container
+%clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.portfolio {
+  @extend %clearfix;
+  margin: 0 auto;
+  padding: $container-padding;
+
+  a {
+    border: 0;
+  }
+
+  img {
+    width: $image-width;
+    height: $image-height;
+    //visibility: hidden;
+  }
+}
+
+%box {
+  display: inline-block;
+  width: $box-width;
+  height: $box-height;
+  margin: $box-margin-vert $box-margin-horiz;
+  padding: $box-padding;
+}
+
+.item-box {
+  @extend %box;
+  background-color: red;
+}
+
+@include breakpoint(portfolio-large) {
+  $current-height-scale: 92;
+  $box-height: ($current-height-scale / 100) * $max-box-height;
+
+  %box {
+    height: $box-height;
+  }
+}
+
+@include breakpoint(medium) {
+  $current-height-scale: 84;
+  $box-height: ($current-height-scale / 100) * $max-box-height;
+
+  %box {
+    height: $box-height;
+  }
+}
+
+@include breakpoint(portfolio-medium-1) {
+  $current-height-scale: 76;
+  $box-height: ($current-height-scale / 100) * $max-box-height;
+
+  %box {
+    height: $box-height;
+  }
+}
+
+@include breakpoint(portfolio-medium-2) {
+  $current-height-scale: 66;
+  $box-height: ($current-height-scale / 100) * $max-box-height;
+
+  %box {
+    height: $box-height;
+  }
+}
+
+@include breakpoint(small) {
+  $box-width: 48.5%;
+
+  .item-box {
+    width: $box-width;
+  }
+
+  $current-height-scale: 76;
+  $box-height: ($current-height-scale / 100) * $max-box-height;
+
+  %box {
+    height: $box-height;
+  }
+}
+
+@include breakpoint(portfolio-small-1) {
+  $current-height-scale: 72;
+  $box-height: ($current-height-scale / 100) * $max-box-height;
+
+  %box {
+    height: $box-height;
+  }
+}
+
+@include breakpoint(portfolio-small-2) {
+  $current-height-scale: 66;
+  $box-height: ($current-height-scale / 100) * $max-box-height;
+
+  %box {
+    height: $box-height;
+  }
+}
+
+@include breakpoint(xsmall) {
+  $box-width: 99%;
+  $box-margin-vert: 1.0%;
+  $current-height-scale: 100;
+  $box-height: ($current-height-scale / 100) * $max-box-height;
+
+  %box {
+    height: $box-height;
+  }
+
+  .item-box {
+    width: $box-width;
+    margin: $box-margin-vert $box-margin-horiz;
+  }
+}
+
+@include breakpoint(portfolio-xsmall) {
+  $box-width: 99%;
+  $current-height-scale: 95;
+  $box-height: ($current-height-scale / 100) * $max-box-height;
+
+  %box {
+    height: $box-height;
+  }
+
+  .item-box {
+    width: $box-width;
+  }
+}
+
+@include breakpoint(xxsmall) {
+  $box-width: 99%;
+  $box-margin-vert: 1.2%;
+  $current-height-scale: 84;
+  $box-height: ($current-height-scale / 100) * $max-box-height;
+
+  %box {
+    height: $box-height;
+  }
+
+  .item-box {
+    width: $box-width;
+    margin: $box-margin-vert $box-margin-horiz;
+  }
+
+}
+
+@include breakpoint(portfolio-xxsmall) {
+  $box-width: 99%;
+  $current-height-scale: 76;
+  $box-height: ($current-height-scale / 100) * $max-box-height;
+
+  %box {
+    height: $box-height;
+  }
+
+  .item-box {
+    width: $box-width;
+  }
+  
+}

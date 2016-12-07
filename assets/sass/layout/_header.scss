@@ -213,13 +213,15 @@
 				}
 			}
 		}
+        @include breakpoint(portfolio-small-2) {
+          .logo {
+            span {
+              display: none;
+            }
+          }
+        }
 
 		@include breakpoint(xsmall) {
-			.logo {
-				span {
-					display: none;
-				}
-			}
 
 			nav {
 				a {
