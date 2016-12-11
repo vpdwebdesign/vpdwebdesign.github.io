@@ -3,7 +3,7 @@
  */
 
 $(function () {
-    // Do JQuery stuff
+    // Portfolio filter animations
     var $portfolio = $( '.portfolio' ).isotope({
         itemSelector: '.item-box'
     });
@@ -24,4 +24,17 @@ $(function () {
             $portfolio.isotope({ filter: filterValue });
         }
     });
+
+    // Image caption reveal on hover animation
+    $( ".item-box" ).hover(
+        function () {
+
+            $( this ).find( "img" ).velocity({ opacity: 0.2 }, { duration: "normal" });
+
+        },
+        function() {
+            $( this ).find( "img" ).velocity({ opacity: 1 }, { duration: "normal" });
+        }
+    );
+
 });

@@ -67,23 +67,8 @@ ul {
   clear: both;
 }
 
-.portfolio {
-  @extend %clearfix;
-  margin: 0 auto;
-  padding: $container-padding;
-
-  a {
-    border: 0;
-  }
-
-  img {
-    width: $image-width;
-    height: $image-height;
-    //visibility: hidden;
-  }
-}
-
 %box {
+  position: relative;
   display: inline-block;
   width: $box-width;
   height: $box-height;
@@ -91,138 +76,180 @@ ul {
   padding: $box-padding;
 }
 
-.item-box {
-  @extend %box;
-  background-color: red;
-}
-
-@include breakpoint(portfolio-large) {
-  $current-height-scale: 92;
-  $box-height: ($current-height-scale / 100) * $max-box-height;
-
-  %box {
-    height: $box-height;
-  }
-}
-
-@include breakpoint(medium) {
-  $current-height-scale: 84;
-  $box-height: ($current-height-scale / 100) * $max-box-height;
-
-  %box {
-    height: $box-height;
-  }
-}
-
-@include breakpoint(portfolio-medium-1) {
-  $current-height-scale: 76;
-  $box-height: ($current-height-scale / 100) * $max-box-height;
-
-  %box {
-    height: $box-height;
-  }
-}
-
-@include breakpoint(portfolio-medium-2) {
-  $current-height-scale: 66;
-  $box-height: ($current-height-scale / 100) * $max-box-height;
-
-  %box {
-    height: $box-height;
-  }
-}
-
-@include breakpoint(small) {
-  $box-width: 48.5%;
+.portfolio {
+  @extend %clearfix;
+  margin: 0 auto;
+  padding: $container-padding;
 
   .item-box {
-    width: $box-width;
+    @extend %box;
+
+    &:hover {
+      background-color: #000000;
+    }
+
+    .caption {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 35%;
+      padding: 0;
+      text-align: center;
+      z-index: 5;
+
+      h3 {
+        margin: 0;
+        padding: 0;
+      }
+
+      span {
+        margin: 0;
+        padding: 0;
+        font-size: 0.8em;
+      }
+    }
+
+    a {
+      border: 0;
+
+      img {
+        position: relative;
+        width: $image-width;
+        height: $image-height;
+        z-index: 10;
+      }
+    }
   }
 
-  $current-height-scale: 76;
-  $box-height: ($current-height-scale / 100) * $max-box-height;
+  @include breakpoint(portfolio-large) {
+    $current-height-scale: 92;
+    $box-height: ($current-height-scale / 100) * $max-box-height;
 
-  %box {
-    height: $box-height;
+    %box {
+      height: $box-height;
+    }
   }
+
+  @include breakpoint(medium) {
+    $current-height-scale: 84;
+    $box-height: ($current-height-scale / 100) * $max-box-height;
+
+    %box {
+      height: $box-height;
+    }
+  }
+
+  @include breakpoint(portfolio-medium-1) {
+    $current-height-scale: 76;
+    $box-height: ($current-height-scale / 100) * $max-box-height;
+
+    %box {
+      height: $box-height;
+    }
+  }
+
+  @include breakpoint(portfolio-medium-2) {
+    $current-height-scale: 66;
+    $box-height: ($current-height-scale / 100) * $max-box-height;
+
+    %box {
+      height: $box-height;
+    }
+  }
+
+  @include breakpoint(small) {
+    $box-width: 48.5%;
+
+    .item-box {
+      width: $box-width;
+    }
+
+    $current-height-scale: 76;
+    $box-height: ($current-height-scale / 100) * $max-box-height;
+
+    %box {
+      height: $box-height;
+    }
+  }
+
+  @include breakpoint(portfolio-small-1) {
+    $current-height-scale: 72;
+    $box-height: ($current-height-scale / 100) * $max-box-height;
+
+    %box {
+      height: $box-height;
+    }
+  }
+
+  @include breakpoint(portfolio-small-2) {
+    $current-height-scale: 66;
+    $box-height: ($current-height-scale / 100) * $max-box-height;
+
+    %box {
+      height: $box-height;
+    }
+  }
+
+  @include breakpoint(xsmall) {
+    $box-width: 99%;
+    $box-margin-vert: 1.0%;
+    $current-height-scale: 100;
+    $box-height: ($current-height-scale / 100) * $max-box-height;
+
+    %box {
+      height: $box-height;
+    }
+
+    .item-box {
+      width: $box-width;
+      margin: $box-margin-vert $box-margin-horiz;
+    }
+  }
+
+  @include breakpoint(portfolio-xsmall) {
+    $box-width: 99%;
+    $current-height-scale: 95;
+    $box-height: ($current-height-scale / 100) * $max-box-height;
+
+    %box {
+      height: $box-height;
+    }
+
+    .item-box {
+      width: $box-width;
+    }
+  }
+
+  @include breakpoint(xxsmall) {
+    $box-width: 99%;
+    $box-margin-vert: 1.2%;
+    $current-height-scale: 84;
+    $box-height: ($current-height-scale / 100) * $max-box-height;
+
+    %box {
+      height: $box-height;
+    }
+
+    .item-box {
+      width: $box-width;
+      margin: $box-margin-vert $box-margin-horiz;
+    }
+
+  }
+
+  @include breakpoint(portfolio-xxsmall) {
+    $box-width: 99%;
+    $current-height-scale: 76;
+    $box-height: ($current-height-scale / 100) * $max-box-height;
+
+    %box {
+      height: $box-height;
+    }
+
+    .item-box {
+      width: $box-width;
+    }
+  }
+
 }
 
-@include breakpoint(portfolio-small-1) {
-  $current-height-scale: 72;
-  $box-height: ($current-height-scale / 100) * $max-box-height;
-
-  %box {
-    height: $box-height;
-  }
-}
-
-@include breakpoint(portfolio-small-2) {
-  $current-height-scale: 66;
-  $box-height: ($current-height-scale / 100) * $max-box-height;
-
-  %box {
-    height: $box-height;
-  }
-}
-
-@include breakpoint(xsmall) {
-  $box-width: 99%;
-  $box-margin-vert: 1.0%;
-  $current-height-scale: 100;
-  $box-height: ($current-height-scale / 100) * $max-box-height;
-
-  %box {
-    height: $box-height;
-  }
-
-  .item-box {
-    width: $box-width;
-    margin: $box-margin-vert $box-margin-horiz;
-  }
-}
-
-@include breakpoint(portfolio-xsmall) {
-  $box-width: 99%;
-  $current-height-scale: 95;
-  $box-height: ($current-height-scale / 100) * $max-box-height;
-
-  %box {
-    height: $box-height;
-  }
-
-  .item-box {
-    width: $box-width;
-  }
-}
-
-@include breakpoint(xxsmall) {
-  $box-width: 99%;
-  $box-margin-vert: 1.2%;
-  $current-height-scale: 84;
-  $box-height: ($current-height-scale / 100) * $max-box-height;
-
-  %box {
-    height: $box-height;
-  }
-
-  .item-box {
-    width: $box-width;
-    margin: $box-margin-vert $box-margin-horiz;
-  }
-
-}
-
-@include breakpoint(portfolio-xxsmall) {
-  $box-width: 99%;
-  $current-height-scale: 76;
-  $box-height: ($current-height-scale / 100) * $max-box-height;
-
-  %box {
-    height: $box-height;
-  }
-
-  .item-box {
-    width: $box-width;
-  }
-  
-}
